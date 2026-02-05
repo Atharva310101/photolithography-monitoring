@@ -4,6 +4,8 @@ import morgan from "morgan";
 import { pool } from "./core/db";
 import machineRoutes from "./routes/machine.routes";
 import telemetryRoutes from "./routes/telemetry.routes";
+import analysisRoutes from "./routes/analysis.routes";
+import queryRoutes from "./routes/query.routes";
 
 const app = express();
 
@@ -28,4 +30,6 @@ app.get("/db-test", async (_req, res) => {
 app.use("/machines", machineRoutes);
 app.use("/telemetry", telemetryRoutes);
 
+app.use("/analysis", analysisRoutes);
+app.use("/query", queryRoutes);
 export default app;

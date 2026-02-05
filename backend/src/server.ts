@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import app from "./app";
 import dashboardRoutes from "./routes/dashboard.routes";
 import { cleanupTelemetry } from "./services/cleanup.service";
