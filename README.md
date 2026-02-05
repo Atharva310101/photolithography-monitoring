@@ -1,70 +1,124 @@
 # 📡 Photolithography Monitoring Dashboard  
-### Real‑time equipment monitoring with anomaly detection, hybrid severity scoring, and interactive analytics
+### Real‑time equipment monitoring, anomaly detection, and AI‑powered analytics
 
-This project is a **locally runnable, production‑grade monitoring system** designed to simulate and visualize the health of photolithography equipment. It includes:
+This project is a **locally runnable, production‑grade monitoring and analytics platform** that simulates a real semiconductor photolithography equipment dashboard. It combines:
 
 - A **Node.js + Express backend**
 - A **PostgreSQL database**
 - A **synthetic telemetry generator**
-- A **Streamlit dashboard**
+- A **Streamlit dashboard with a modern 3‑page UI**
 - A **hybrid anomaly detection engine**
 - A **machine health scoring system**
-- A **compact, screenshot‑friendly UI**
-- Automatic cleanup to keep the database small
+- A **GenAI-powered conversational assistant**
+- A **Natural‑Language‑to‑SQL analytics engine**
 
-The system continuously ingests synthetic telemetry, computes machine health in real time, and displays trends, alerts, and analytics in a clean, professional dashboard.
+The system continuously ingests synthetic telemetry, computes machine health in real time, and provides interactive visualizations, alerts, and AI‑driven insights.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
-### **Real‑time Telemetry**
-Each machine generates live telemetry:
+## **1. Real‑time Telemetry**
+Each machine streams live telemetry every second:
+
 - Temperature  
 - Pressure  
 - Alignment error  
 - Throughput  
 
-Data is stored in PostgreSQL and updated every second.
+All data is stored in PostgreSQL and visualized instantly.
 
-### **Hybrid Anomaly Detection**
-The backend computes anomalies using:
-- Raw thresholds  
-- Z‑scores  
+---
+
+## **2. Hybrid Anomaly Detection**
+The backend uses a multi‑layer anomaly engine:
+
+- Raw threshold checks  
+- Z‑score statistical deviation  
 - Drift detection  
 - Worst‑case severity logic  
 
-This produces realistic fab‑style alerts.
+This produces realistic fab‑style alerts and severity flags.
 
-### **Machine Health Scoring**
-Each machine receives a health score (0–100) based on:
+---
+
+## **3. Machine Health Scoring**
+Each machine receives a dynamic health score (0–100) based on:
+
 - Recent anomalies  
 - Statistical deviations  
 - Trend behavior  
-- Severity ranking  
+- Severity weighting  
 
 Severity levels:
+
 - 🟩 HEALTHY  
 - 🟨 MINOR  
 - 🟧 MAJOR  
 - 🟥 CRITICAL  
 
-### **Interactive Dashboard**
-Built with Streamlit:
-- Compact 3‑column machine overview  
-- Anomaly counters  
-- Flags  
-- Health trend sparkline  
-- 2×2 graph grid (temperature, throughput, pressure, alignment error)  
-- Fab‑level overview  
-- Active alerts table  
+---
 
-### **Automatic Database Cleanup**
-To prevent storage bloat, the backend keeps only the **latest 50,000 rows per machine**.
+## **4. Modern 3‑Page Streamlit Dashboard**
+
+### **Page 1 — Home (Monitoring Dashboard)**
+- Machine status  
+- Latest telemetry  
+- Health score + severity badge  
+- Anomaly counters  
+- Active flags  
+- Health trend  
+- 2×2 telemetry graph grid  
+- Fab‑level overview  
+- Recent alerts table  
+
+📸 **Screenshot placeholders (Page 1):**  
+1. `![Home – Machine Health & Anomalies](./images/image1.png)`  
+2. `![Home – Telemetry Graphs](./images/image3.png)`  
+3. `![Home – Alerts Table](./images/image4.png)`  
 
 ---
 
-## 🧱 Architecture Overview
+### **Page 2 — Ask the Fab (Conversational AI Assistant)**
+A GenAI‑powered assistant that understands:
+
+- Equipment behavior  
+- Anomalies  
+- Trends  
+- Follow‑up questions (conversation memory)  
+- Context from telemetry + alerts + health  
+
+Example questions:
+
+- “Why did Machine 2’s health drop?”  
+- “Was it mainly temperature or throughput?”  
+- “Show me only the last 10 minutes.”  
+
+📸 **Screenshot placeholder (Page 2):**  
+4. `![Ask the Fab – Chat Interface](./images/image5.png)`  
+
+---
+
+### **Page 3 — NL → SQL Explorer**
+A natural‑language analytics engine that:
+
+- Converts English questions into SQL  
+- Executes the query on PostgreSQL  
+- Returns results + charts + summaries  
+
+Example questions:
+
+- “Show me the last 10 telemetry rows.”  
+- “Which machine has the highest average throughput?”  
+- “List all pressure readings below 0.95.”  
+
+📸 **Screenshot placeholders (Page 3):**  
+5. `![NL → SQL – Query Interface](./images/image6.png)`  
+6. `![NL → SQL – Insight Summary](./images/image7.png)`  
+
+---
+
+# 🧱 Architecture Overview
 
 ```
 ┌──────────────────────────┐
@@ -83,47 +137,52 @@ To prevent storage bloat, the backend keeps only the **latest 50,000 rows per ma
 │  Backend API (Express)    │
 │  /latest /timeline /health│
 │  /overview /alerts        │
+│  /analysis /query         │
 └──────────────┬───────────┘
                │ JSON
                ▼
 ┌──────────────────────────┐
 │   Streamlit Dashboard     │
+│   3‑page modern UI        │
 │   Real‑time visualization │
+│   GenAI insights          │
 └──────────────────────────┘
 ```
 
 ---
 
-## 📦 Tech Stack
+# 📦 Tech Stack
 
-### **Backend**
+## **Backend**
 - Node.js  
 - Express  
 - PostgreSQL  
 - pg (Postgres client)  
 - Cron‑based cleanup  
+- Gemini 2.5 Flash (GenAI)  
 
-### **Frontend**
+## **Frontend**
 - Streamlit  
 - Plotly  
+- Altair  
 - Pandas  
 
-### **Infrastructure**
+## **Infrastructure**
 - Local PostgreSQL instance  
 - Optional Docker setup  
 
 ---
 
-## 🗄 Database Schema
+# 🗄 Database Schema
 
-### **machines**
+## **machines**
 | column | type |
 |--------|------|
 | id | integer |
 | name | text |
 | status | text |
 
-### **telemetry**
+## **telemetry**
 | column | type |
 |--------|------|
 | id | integer |
@@ -136,29 +195,29 @@ To prevent storage bloat, the backend keeps only the **latest 50,000 rows per ma
 
 ---
 
-## ⚙️ Setup Instructions
+# ⚙️ Setup Instructions
 
-### **1. Clone the repository**
+## **1. Clone the repository**
 ```
 git clone <your-repo-url>
 cd photolithography-dashboard
 ```
 
-### **2. Install backend dependencies**
+## **2. Install backend dependencies**
 ```
 cd backend
 npm install
 ```
 
-### **3. Start PostgreSQL**
-Create a database named:
+## **3. Start PostgreSQL**
+Create a database:
 ```
 photolithography
 ```
 
-Run the schema SQL (tables + seed machines).
+Run schema SQL (tables + seed machines).
 
-### **4. Start the backend**
+## **4. Start the backend**
 ```
 npm run dev
 ```
@@ -168,15 +227,15 @@ Backend runs at:
 http://localhost:4000
 ```
 
-### **5. Install dashboard dependencies**
+## **5. Install dashboard dependencies**
 ```
-cd ../dashboard
+cd ../frontend
 pip install -r requirements.txt
 ```
 
-### **6. Run the dashboard**
+## **6. Run the dashboard**
 ```
-streamlit run app.py
+streamlit run dashboard.py
 ```
 
 Dashboard runs at:
@@ -186,9 +245,9 @@ http://localhost:8501
 
 ---
 
-## 🧹 Automatic Cleanup (50k rows per machine)
+# 🧹 Automatic Cleanup (50k rows per machine)
 
-The backend includes a scheduled cleanup job:
+A scheduled cleanup job:
 
 - Runs every 10 minutes  
 - Keeps only the **latest 50,000 rows per machine**  
@@ -203,33 +262,46 @@ src/services/cleanup.service.ts
 
 ---
 
-## 📊 Screenshots
+# 📊 Screenshots
 
-(Add your dashboard screenshots here — they will look great with your new UI.)
+### **Page 1 — Home**
+1. Machine health + anomalies  
+2. Telemetry graphs  
+3. Alerts table  
+
+### **Page 2 — Ask the Fab**
+4. Chat interface  
+
+### **Page 3 — NL → SQL**
+5. Query interface  
+6. Insight summary  
 
 ---
 
-## 🧪 Testing
+# 🧪 Testing
 
 You can test the system by:
 
-- Changing synthetic data generation rates  
-- Introducing anomalies  
-- Watching severity and health scores update  
-- Observing alerts populate  
-- Checking cleanup behavior  
+- Modifying synthetic data generation  
+- Triggering anomalies  
+- Observing severity changes  
+- Watching alerts populate  
+- Running NL→SQL queries  
+- Asking follow‑up questions in the chatbot  
 
 ---
 
-## 📝 Future Enhancements
+# 📝 Future Enhancements
 
 - Fab‑level heatmap  
 - Predictive maintenance model  
 - WebSocket live updates  
 - Multi‑fab support  
+- Machine comparison mode  
+- Daily fab report generator  
 
 ---
 
-## 👤 Author
+# 👤 Author
 
-**Atharva Pargaonkar** 
+**Atharva Pargaonkar**  

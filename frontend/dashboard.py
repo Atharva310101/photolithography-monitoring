@@ -93,10 +93,10 @@ with col_nav:
         if st.button("🏠 Home"):
             st.session_state.nav = "Home"
     with nav_col2:
-        if st.button("🤖 Ask the Fab"):
+        if st.button("🤖 Chat with AI"):
             st.session_state.nav = "Chat"
     with nav_col3:
-        if st.button("📊 NL → SQL"):
+        if st.button("📊 Data Analysis"):
             st.session_state.nav = "SQL"
 
 # -----------------------------
@@ -266,7 +266,7 @@ if st.session_state.nav == "Home":
 # ============================================================
 elif st.session_state.nav == "Chat":
 
-    st.header("🤖 Ask the Fab")
+    st.header("🤖 Chat with FabAI")
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
@@ -280,7 +280,7 @@ elif st.session_state.nav == "Chat":
             </div>
         """, unsafe_allow_html=True)
 
-    question = st.text_area("Ask a question about the fab:")
+    question = st.text_area("Ask a question to FabAI:")
 
     if st.button("Send"):
         st.session_state.chat_history.append({"role": "user", "content": question})
@@ -309,7 +309,7 @@ elif st.session_state.nav == "SQL":
 
     st.header("📊 Natural Language → SQL Explorer")
 
-    nl_query = st.text_input("Ask a data question:")
+    nl_query = st.text_input("Ask a Data Analytics question:")
 
     if st.button("Run Query"):
         response = requests.post(

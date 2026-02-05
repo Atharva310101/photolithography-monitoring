@@ -40,7 +40,7 @@ Return a clear, concise explanation suitable for fab engineers.
 }
 
 export async function generateSQL(question: string) {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
 You are an expert SQL generator for a photolithography monitoring database.
@@ -67,7 +67,7 @@ ${question}
 }
 
 export async function summarizeResult(question: string, rows: any[]) {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
 Summarize the following SQL result in plain English.
