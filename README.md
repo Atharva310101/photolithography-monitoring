@@ -72,10 +72,10 @@ Severity levels:
 - Fab‑level overview  
 - Recent alerts table  
 
-📸 **Screenshot placeholders (Page 1):**  
-1. `![Home – Machine Health & Anomalies](./images/image1.png)`  
-2. `![Home – Telemetry Graphs](./images/image3.png)`  
-3. `![Home – Alerts Table](./images/image4.png)`  
+📸 **Project Screenshots (Page 1):**  
+1. ![Home – Machine Health & Anomalies](./images/image1.png)  
+2. ![Home – Telemetry Graphs](./images/image3.png)  
+3. ![Home – Alerts Table](./images/image4.png)  
 
 ---
 
@@ -94,8 +94,8 @@ Example questions:
 - “Was it mainly temperature or throughput?”  
 - “Show me only the last 10 minutes.”  
 
-📸 **Screenshot placeholder (Page 2):**  
-4. `![Ask the Fab – Chat Interface](./images/image5.png)`  
+📸 **Project Screenshots (Page 2):**  
+4. ![Ask the Fab – Chat Interface](./images/image5.png)  
 
 ---
 
@@ -112,9 +112,9 @@ Example questions:
 - “Which machine has the highest average throughput?”  
 - “List all pressure readings below 0.95.”  
 
-📸 **Screenshot placeholders (Page 3):**  
-5. `![NL → SQL – Query Interface](./images/image6.png)`  
-6. `![NL → SQL – Insight Summary](./images/image7.png)`  
+📸 **Project Screenshots (Page 3):**  
+5. ![NL → SQL – Query Interface](./images/image6.png)  
+6. ![NL → SQL – Insight Summary](./images/image7.png)  
 
 ---
 
