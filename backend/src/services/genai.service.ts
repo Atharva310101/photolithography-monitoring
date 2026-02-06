@@ -43,7 +43,7 @@ export async function generateSQL(question: string) {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
-You are an expert SQL generator for a photolithography monitoring database.
+You are an expert SQL generator for a semiconductor fab equipment telemetry monitoring database.
 
 Tables:
 machines(id, name, status)

@@ -7,10 +7,10 @@ from streamlit_autorefresh import st_autorefresh
 
 BACKEND = "http://localhost:4000"
 
-st.set_page_config(page_title="Photolithography Dashboard", layout="wide")
+st.set_page_config(page_title="Fab Equipment Telemetry Dashboard", layout="wide")
 
 if "nav" not in st.session_state:
-    st.session_state.nav = "Home"
+    st.session_state.nav = "Home"   
 
 if st.session_state.get("nav", "Home") == "Home":
     st_autorefresh(interval=5000, limit=None)
@@ -67,7 +67,7 @@ st.markdown("""
 col_title, col_nav = st.columns([3, 2])
 
 with col_title:
-    st.markdown("<h1 style='text-align:left;'>Photolithography Monitoring Dashboard</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:left;'>Fab Equipment Telemetry & Analytics Dashboard</h1>", unsafe_allow_html=True)
 
 with col_nav:
     st.markdown("""

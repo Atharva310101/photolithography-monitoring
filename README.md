@@ -1,7 +1,7 @@
-# 📡 Photolithography Monitoring Dashboard  
+# 📡 Fab Equipment Telemetry & Analytics Dashboard 
 ### Real‑time equipment monitoring, anomaly detection, and AI‑powered analytics
 
-This project is a **locally runnable, production‑grade monitoring and analytics platform** that simulates a real semiconductor photolithography equipment dashboard. It combines:
+This project is a **locally runnable, production‑grade monitoring and analytics platform** that simulates a real-time semiconductor fab equipment monitoring dashboard  with AI-powered insights and analytics. It combines:
 
 - A **Node.js + Express backend**
 - A **PostgreSQL database**
