@@ -191,17 +191,17 @@ if st.session_state.nav == "Home":
 
     with c1:
         st.subheader("Anomaly Counts")
-        if health:
+        if health and "anomaly_counts" in health:
             counts = health["anomaly_counts"]
             for k, v in counts.items():
                 label = k.replace('_', ' ').title()
                 st.markdown(f'<div class="big-stat-text"> - {label}: {v}</div>', unsafe_allow_html=True)
         else:
-            st.write("No data")
+            st.write("No data available")
 
     with c2:
         st.subheader("Flags")
-        if health and health["flags"]:
+        if health and health.get("flags"):
             for f in health["flags"]:
                 st.markdown(f'<div class="big-stat-text"> - {f}</div>', unsafe_allow_html=True)
         else:
@@ -209,12 +209,12 @@ if st.session_state.nav == "Home":
 
     with c3:
         st.subheader("Health Trend")
-        if health and health["trend"]:
+        if health and health.get("trend"):
             trend_df = pd.DataFrame(health["trend"])
             trend_df["timestamp"] = pd.to_datetime(trend_df["timestamp"])
             st.line_chart(trend_df.set_index("timestamp")["health"])
         else:
-            st.write("No trend data")
+            st.write("No trend data available")
 
     # -----------------------------
     # Telemetry Graphs

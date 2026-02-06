@@ -73,7 +73,7 @@ Severity levels:
 - Recent alerts table  
 
 📸 **Project Screenshots (Page 1):**  
-1. ![Home – Machine Health & Anomalies](./images/image1.png)  
+1. ![Home – Machine Health & Anomalies](./images/8.png)  
 2. ![Home – Telemetry Graphs](./images/image3.png)  
 3. ![Home – Alerts Table](./images/image4.png)  
 
@@ -95,7 +95,7 @@ Example questions:
 - “Show me only the last 10 minutes.”  
 
 📸 **Project Screenshots (Page 2):**  
-4. ![Ask the Fab – Chat Interface](./images/image5.png)  
+4. ![Ask the Fab – Chat Interface](./images/image2.png)  
 
 ---
 
@@ -113,8 +113,7 @@ Example questions:
 - “List all pressure readings below 0.95.”  
 
 📸 **Project Screenshots (Page 3):**  
-5. ![NL → SQL – Query Interface](./images/image6.png)  
-6. ![NL → SQL – Insight Summary](./images/image7.png)  
+5. ![NL → SQL – Query Interface](./images/image9.png)  
 
 ---
 

@@ -65,11 +65,25 @@ export async function getTimelineTelemetry(machineId: number, minutes: number) {
 ------------------------------------------------------- */
 export async function getMachineHealth(machineId: number) {
     const latest = await getLatestTelemetry(machineId);
-    if (!latest) return { health: 0, flags: ["no_data"], latest: null };
+    if (!latest) return {
+        health: 0,
+        severity: "HEALTHY",
+        flags: ["no_data"],
+        latest: null,
+        anomaly_counts: { temp_spike: 0, throughput_drop: 0, pressure_low: 0, drift: 0, zscore: 0 },
+        trend: []
+    };
 
     const window = await getTimelineTelemetry(machineId, 30);
     if (window.length < 5) {
-        return { health: 50, flags: ["insufficient_data"], latest };
+        return {
+            health: 50,
+            severity: "HEALTHY",
+            flags: ["insufficient_data"],
+            latest,
+            anomaly_counts: { temp_spike: 0, throughput_drop: 0, pressure_low: 0, drift: 0, zscore: 0 },
+            trend: []
+        };
     }
 
     // Extract arrays
