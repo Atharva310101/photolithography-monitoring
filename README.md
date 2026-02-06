@@ -73,7 +73,7 @@ Severity levels:
 - Recent alerts table  
 
 📸 **Project Screenshots (Page 1):**  
-1. ![Home – Machine Health & Anomalies](./images/8.png)  
+1. ![Home – Machine Health & Anomalies](./images/image8.png)  
 2. ![Home – Telemetry Graphs](./images/image3.png)  
 3. ![Home – Alerts Table](./images/image4.png)  
 
